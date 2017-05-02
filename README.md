@@ -1,5 +1,24 @@
-mslinks
+com.erigir.mslinks
 =======
+
+## Important note
+
+This is a pure repackaging of the com.erigir.mslinks library forked from https://github.com/BlackOverlord666/com.erigir.mslinks.  All I have
+done in this fork is move the code into a Java-standard compliant namespace, and add the wrappings necessary to get 
+it into Maven.  Maven packaging looks like (check maven central for newest version number):
+
+```
+
+<dependency>
+    <groupId>com.erigir</groupId>
+    <artifactId>com.erigir.mslinks</artifactId>
+    <version>0.0.1</version>
+</dependency>
+
+```
+
+Everything below here is the original documentation.
+
 
 ### Summary
 Library for parsing and creating Windows shortcut files (.lnk)
@@ -18,9 +37,9 @@ Easiest way to create link with default parameters: `ShellLink.createLink("targe
 
 Following example demonstrates creating link for .bat file and setting working directory, icon and setting up font parameters for console
 ```
-package mslinks;
+package com.erigir.mslinks;
 
-import java.io.IOException;
+import java.com.erigir.mslinks.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -29,7 +48,7 @@ public class Main {
 			.setIconLocation("%SystemRoot%\\system32\\SHELL32.dll");
 		sl.getHeader().setIconIndex(128);
 		sl.getConsoleData()
-			.setFont(mslinks.extra.ConsoleData.Font.Consolas)
+			.setFont(com.erigir.mslinks.extra.ConsoleData.Font.Consolas)
 			.setFontSize(24)
 			.setTextColor(5);
 				
@@ -43,9 +62,9 @@ public class Main {
 
 Final example creates cyclic link that blocks explorer on Windows 7 while trying to get into the containing directory
 ```
-package mslinks;
+package com.erigir.mslinks;
 
-import java.io.IOException;
+import java.com.erigir.mslinks.io.IOException;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
