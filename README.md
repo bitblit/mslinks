@@ -11,7 +11,7 @@ it into Maven.  Maven packaging looks like (check maven central for newest versi
 
 <dependency>
     <groupId>com.erigir</groupId>
-    <artifactId>com.erigir.mslinks</artifactId>
+    <artifactId>mslinks</artifactId>
     <version>0.0.2</version>
 </dependency>
 
